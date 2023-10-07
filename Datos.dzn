@@ -27,7 +27,7 @@ demand = [| 750,  850, 900, 800
 
 
 % Costos de producción (Nuclear, Hidroeléctrica, Térmica)
-costs = [300, 250, 350]; 
+costs = [50, 20, 30]; 
 
 % Capacidad diaria (Nuclear, Hidroeléctrica, Térmica)
 capacities = [1100, 350, 600];
