@@ -43,10 +43,15 @@ class EnergyApp(tk.Tk):
         self.hydro_max_consecutive_days_var = tk.IntVar(value=1)
         ttk.Entry(self, textvariable=self.hydro_max_consecutive_days_var).grid(column=1, row=7)
 
-        self.result_var = tk.StringVar(value="Ganancia neta:")
-        ttk.Label(self, textvariable=self.result_var).grid(column=1, row=8)
+        ttk.Label(self, text="Demanda diaria (fila por día, columna por cliente):").grid(column=0, row=8, sticky='w')
+        self.demand_txt = scrolledtext.ScrolledText(self, width=30, height=5)
+        self.demand_txt.grid(column=1, row=8)
 
-        ttk.Button(self, text="Ejecutar", command=self.execute_model).grid(column=1, row=9)
+        self.result_var = tk.StringVar(value="Ganancia neta:")
+        ttk.Label(self, textvariable=self.result_var).grid(column=1, row=9)
+
+        ttk.Button(self, text="Ejecutar", command=self.execute_model).grid(column=1, row=10)
+
 
     def execute_model(self):
         # Genera Datos.dzn con los valores de la interfaz
@@ -62,6 +67,10 @@ class EnergyApp(tk.Tk):
             file.write(f"min_demand_percentage = {self.min_demand_percentage_var.get()};\n")
             file.write(f"hydro_max_percentage = {self.hydro_max_percentage_var.get()};\n")
             file.write(f"hydro_max_consecutive_days = {self.hydro_max_consecutive_days_var.get()};\n")
+
+        demand_data = self.demand_txt.get("1.0", tk.END).strip().split('\n')
+        demand_rows = '|'.join(demand_data)
+        file.write(f"demand = [ |{demand_rows}| ];\n")
 
         # Ejecuta el modelo con el solver especificado
         result = os.popen("minizinc --solver COIN-BC PlantaEnergia.mzn Datos.dzn").read()
