@@ -67,10 +67,10 @@ class EnergyApp(tk.Tk):
             file.write(f"min_demand_percentage = {self.min_demand_percentage_var.get()};\n")
             file.write(f"hydro_max_percentage = {self.hydro_max_percentage_var.get()};\n")
             file.write(f"hydro_max_consecutive_days = {self.hydro_max_consecutive_days_var.get()};\n")
-
-        demand_data = self.demand_txt.get("1.0", tk.END).strip().split('\n')
-        demand_rows = '|'.join(demand_data)
-        file.write(f"demand = [ |{demand_rows}| ];\n")
+            
+            demand_data = self.demand_txt.get("1.0", tk.END).strip().split('\n')
+            demand_rows = '|\n'.join(demand_data)
+            file.write(f"demand = [|{demand_rows}|];\n")
 
         # Ejecuta el modelo con el solver especificado
         result = os.popen("minizinc --solver COIN-BC PlantaEnergia.mzn Datos.dzn").read()
