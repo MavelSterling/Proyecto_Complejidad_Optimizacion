@@ -74,8 +74,11 @@ class EnergyApp(tk.Tk):
             file.write(f"demand = [|{demand_rows}|];\n")
 
         # Ejecuta el modelo con el solver especificado
-        result = os.popen("minizinc --solver COIN-BC PlantaEnergia.mzn Datos.dzn").read()
-        self.result_var.set(result)
+        cmd_result = os.popen("/Applications/MiniZincIDE.app/Contents/Resources/minizinc --solver COIN-BC PlantaEnergia.mzn Datos.dzn").read()  
+        print(" ") 
+        print(" ")     
+        print(cmd_result)
+        self.result_var.set(cmd_result)
 
 if __name__ == "__main__":
     app = EnergyApp()
