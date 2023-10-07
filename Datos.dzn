@@ -16,13 +16,8 @@ n = 7;
 m = 4;
 
 % Demanda diaria por cliente y día (suponiendo una semana y 4 clientes)
-array[1..7, 1..4] of int: demand = [| 80,  90, 100, 85 
-                                  | 75,  95,  98, 88
-                                  | 70, 100,  95, 80
-                                  | 72,  92, 105, 82
-                                  | 68,  94,  97, 84
-                                  | 65,  93,  96, 81
-                                  | 67,  91,  99, 83 |];
+array[1..7, 1..4] of int: demand = array2d(1..7, 1..4, [80, 90, 100, 85, 75, 95, 98, 88, 70, 100, 95, 80, 72, 92, 105, 82, 68, 94, 97, 84, 65, 93, 96, 81, 67, 91, 99, 83]);
+
 
 
 % Costos de producción (Nuclear, Hidroeléctrica, Térmica)
