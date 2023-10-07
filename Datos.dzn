@@ -16,24 +16,24 @@ n = 7;
 m = 4;
 
 % Demanda diaria por cliente y día (suponiendo una semana y 4 clientes)
-demand = [| 80,  90, 100, 85 
-          | 75,  95,  98, 88
-          | 70, 100,  95, 80
-          | 72,  92, 105, 82
-          | 68,  94,  97, 84
-          | 65,  93,  96, 81
-          | 67,  91,  99, 83 |];
+demand = [| 750,  850, 900, 800 
+          | 730,  870, 910, 810
+          | 720, 880,  920, 800
+          | 710,  890, 930, 820
+          | 700,  900, 940, 830
+          | 690, 910,  950, 840
+          | 680,  920, 960, 850 |];
 
 
 
 % Costos de producción (Nuclear, Hidroeléctrica, Térmica)
-costs = [500, 400, 600];
+costs = [300, 250, 350]; 
 
 % Capacidad diaria (Nuclear, Hidroeléctrica, Térmica)
-capacities = [1000, 300, 500];
+capacities = [1100, 350, 600];
 
 % Pago individual por cliente por MW (4 clientes)
-Ps = [55, 50, 48, 52];
+Ps = [60, 55, 53, 57]; 
 
 % Porcentaje mínimo de demanda a cubrir
 min_demand_percentage = 0.50;
