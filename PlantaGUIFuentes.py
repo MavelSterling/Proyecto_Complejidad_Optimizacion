@@ -1,6 +1,6 @@
 # coding=utf-8
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, scrolledtext
 import os
 
 class EnergyApp(tk.Tk):
