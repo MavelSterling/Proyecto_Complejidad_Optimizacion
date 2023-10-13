@@ -30,4 +30,21 @@ var int: net_profit = sum(d in 1..n, s in 1..m) (Ps[s] * client_supply[d, s]) - 
 solve maximize net_profit;
 
 % Salida
-output ["Ganancia neta: \(net_profit)\n"];
+% output ["Ganancia neta: \(net_profit)\n"];
+
+% Salida
+output [
+    "Ganancia neta: ", show(net_profit), "\n",
+    "\nProducción por planta:\n",
+    "Nuclear (Día - Producción):\n"] ++ 
+    [show(d) ++ " - " ++ show(production[d,1]) ++ "\n" | d in 1..n] ++
+    ["Hidroeléctrica (Día - Producción):\n"] ++
+    [show(d) ++ " - " ++ show(production[d,2]) ++ "\n" | d in 1..n] ++
+    ["Térmica (Día - Producción):\n"] ++
+    [show(d) ++ " - " ++ show(production[d,3]) ++ "\n" | d in 1..n] ++
+    ["\nSuministro a clientes:\n"] ++
+    ["Cliente ", show(s), " (Día - Suministro):\n"] ++
+    [show(d) ++ " - " ++ show(client_supply[d,s]) ++ "\n" | d in 1..n] ++
+    ["\n"] | s in 1..m
+];
+
