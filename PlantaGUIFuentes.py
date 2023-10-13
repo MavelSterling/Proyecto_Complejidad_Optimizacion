@@ -10,7 +10,8 @@ class EnergyApp(tk.Tk):
 
         self.title("Interfaz de Energía")
         self.geometry("600x450")
-
+        self.state("zoomed")
+        
         # Campos para los datos de entrada
         ttk.Label(self, text="Número de días (n):").grid(column=0, row=0)
         self.days_var = tk.IntVar()
