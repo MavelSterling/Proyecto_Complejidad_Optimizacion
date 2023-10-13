@@ -21,8 +21,9 @@ constraint forall(d in 1..n) (sum(p in 1..3) (production[d, p]) = sum(s in 1..m)
 
 % Restricción adicional para la hidroeléctrica
 constraint forall(d in 2..n) (
-    (production[d-1, 2] >= hydro_max_percentage * capacities[2] /\ production[d, 2] >= hydro_max_percentage * capacities[2]) 
-    -> (d - (d-1) > hydro_max_consecutive_days)
+    (production[d-1, 2] > hydro_max_percentage * capacities[2]) 
+    -> 
+    (production[d, 2] <= hydro_max_percentage * capacities[2])
 );
 
 % Función objetivo: Maximizar la ganancia neta
