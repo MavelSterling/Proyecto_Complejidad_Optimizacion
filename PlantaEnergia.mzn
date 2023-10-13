@@ -33,18 +33,29 @@ solve maximize net_profit;
 % output ["Ganancia neta: \(net_profit)\n"];
 
 % Salida
+% Salida
 output [
     "Ganancia neta: ", show(net_profit), "\n",
     "\nProducción por planta:\n",
-    "Nuclear (Día - Producción):\n"] ++ 
-    [show(d) ++ " - " ++ show(production[d,1]) ++ "\n" | d in 1..n] ++
-    ["Hidroeléctrica (Día - Producción):\n"] ++
-    [show(d) ++ " - " ++ show(production[d,2]) ++ "\n" | d in 1..n] ++
-    ["Térmica (Día - Producción):\n"] ++
-    [show(d) ++ " - " ++ show(production[d,3]) ++ "\n" | d in 1..n] ++
-    concat(["\nSuministro a clientes:\n"] ++
+    "Nuclear (Día - Producción):\n"
+] ++
+[show(d) ++ " - " ++ show(production[d,1]) ++ "\n" | d in 1..n] ++
+[
+    "Hidroeléctrica (Día - Producción):\n"
+] ++
+[show(d) ++ " - " ++ show(production[d,2]) ++ "\n" | d in 1..n] ++
+[
+    "Térmica (Día - Producción):\n"
+] ++
+[show(d) ++ " - " ++ show(production[d,3]) ++ "\n" | d in 1..n] ++
+[
+    "\nSuministro a clientes:\n"
+] ++
+concat([
     ["Cliente ", show(s), " (Día - Suministro):\n"] ++
-    [show(d) ++ " - " ++ show(client_supply[d,s]) ++ "\n" | d in 1..n] | s in 1..m])
+    [show(d) ++ " - " ++ show(client_supply[d,s]) ++ "\n" | d in 1..n]
+    | s in 1..m
+])
 ];
 
 
