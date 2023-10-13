@@ -31,7 +31,7 @@ solve maximize net_profit;
 
 % Salida
 % output ["Ganancia neta: \(net_profit)\n"];
-
+ 
 % Salida
 output [
     "Ganancia neta: ", show(net_profit), "\n",
@@ -51,9 +51,11 @@ output [
     "\nSuministro a clientes:\n"
 ] ++
 concat([
-    ["Cliente ", show(s), " (Día - Suministro):\n"] ++
-    [show(d) ++ " - " ++ show(client_supply[d,s]) ++ "\n" | d in 1..n]
-    | s in 1..m
+    concat([
+        "Cliente ", show(s), " (Día - Suministro):\n",
+        show(d) ++ " - " ++ show(client_supply[d,s]) ++ "\n" | d in 1..n
+    ]) | s in 1..m
 ]);
+
 
 
