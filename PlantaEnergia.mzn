@@ -46,16 +46,7 @@ output [
 [
     "Térmica (Día - Producción):\n"
 ] ++
-[show(d) ++ " - " ++ show(production[d,3]) ++ "\n" | d in 1..n] ++
-[
-    "\nSuministro a clientes:\n"
-] ++
-concat([
-    concat([
-        "Cliente ", show(s), " (Día - Suministro):\n",
-        show(d) ++ " - " ++ show(client_supply[d,s]) ++ "\n" | d in 1..n
-    ]) | s in 1..m
-]);
+[show(d) ++ " - " ++ show(production[d,3]) ++ "\n" | d in 1..n];
 
 
 
