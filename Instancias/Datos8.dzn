@@ -40,7 +40,7 @@ costs = [52, 25, 33];
 capacities = [1130, 370, 620];
 
 % Pago individual por cliente por MW (3 clientes)
-Ps = [62, 60, 58]; 
+Ps = [62, 60, 58, 52, 50]; 
 
 % Porcentaje mínimo de demanda a cubrir
 min_demand_percentage = 0.50;
