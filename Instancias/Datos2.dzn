@@ -16,7 +16,7 @@ n = 5;
 m = 3;
 
 % Pedidos diarios por tienda y día (suponiendo una semana y  3 cliente)
-orders = [| 150,  200, 170
+demand = [| 150,  200, 170
            | 160,  180, 190
            | 155, 205,  165
            | 150,  210, 175
