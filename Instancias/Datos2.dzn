@@ -23,10 +23,10 @@ orders = [| 150,  200, 170
            | 155,  195, 180 |];
 
 % Costos de producción 
-costs = [10, 15, 20]; 
+costs = [10, 12, 10]; 
 
 % Capacidad diaria 
-capacities = [500, 400, 350];
+capacities = [300, 250, 100];
 
 % Pago individual por cliente
 Pp = [12, 17, 16]; 
