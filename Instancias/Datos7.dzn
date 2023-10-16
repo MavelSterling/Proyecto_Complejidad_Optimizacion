@@ -40,10 +40,10 @@ capacities = [1130, 370, 620];
 Ps = [62, 60, 58]; 
 
 % Porcentaje mínimo de demanda a cubrir
-min_demand_percentage = 0.50;
+min_demand_percentage = 0.65;
 
 % Porcentaje máximo de capacidad para hidroeléctrica
-hydro_max_percentage = 0.80;
+hydro_max_percentage = 0.95;
 
 % Días consecutivos máximos a ese porcentaje
 hydro_max_consecutive_days = 1;
