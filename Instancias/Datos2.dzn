@@ -29,7 +29,7 @@ costs = [10, 12, 10];
 capacities = [300, 250, 100];
 
 % Pago individual por cliente
-Pp = [12, 17, 16]; 
+Ps = [12, 17, 16]; 
 
 % Porcentaje mínimo de demanda a cubrir
 min_demand_percentage = 0.55;
