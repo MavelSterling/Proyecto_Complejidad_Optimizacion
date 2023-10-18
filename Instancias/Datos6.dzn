@@ -10,46 +10,36 @@
 
 
 % Número de días
-n = 14;  % Dos semanas
+n = 5;
 
 % Número de clientes
-m = 6; 
+m = 4;
 
-% Demanda diaria por cliente y día (suponiendo dos semanas y 6 clientes)
-demand = [| 820,  840, 870, 880, 890, 860
-          | 800,  820, 850, 870, 880, 850
-          | 780, 800,  830, 850, 870, 840
-          | 760,  780, 810, 830, 850, 830
-          | 750,  770, 800, 820, 840, 820
-          | 740, 760,  790, 810, 830, 810
-          | 720,  740, 770, 790, 810, 790
-          | 710, 730,  760, 780, 800, 780
-          | 700, 720,  750, 770, 790, 770
-          | 690, 710,  740, 760, 780, 760
-          | 680, 700,  730, 750, 770, 750
-          | 670, 690,  720, 740, 760, 740
-          | 660, 680,  710, 730, 750, 730
-          | 650, 670,  700, 720, 740, 720 |];
+% Demanda diaria por cliente y día (suponiendo una semana y 4 clientes)
+demand = [| 650,  750, 800, 900 
+          | 630,  770, 810, 910
+          | 620, 780,  820, 915
+          | 610,  790, 830, 920
+          | 600,  700, 840, 935
+          |];
 
 
 
 % Costos de producción (Nuclear, Hidroeléctrica, Térmica)
-costs = [55, 26, 35]; 
+costs = [55, 25, 35]; 
 
 % Capacidad diaria (Nuclear, Hidroeléctrica, Térmica)
-capacities = [1160, 380, 640];
+capacities = [1110, 320, 630];
 
-% Pago individual por cliente por MW (6 clientes)
-Ps = [65, 61, 59, 58, 60, 57]; 
+% Pago individual por cliente por MW (4 clientes)
+Ps = [73, 53, 51, 55]; 
 
 % Porcentaje mínimo de demanda a cubrir
-min_demand_percentage = 0.60;
+min_demand_percentage = 0.50;
 
 % Porcentaje máximo de capacidad para hidroeléctrica
 hydro_max_percentage = 0.80;
 
 % Días consecutivos máximos a ese porcentaje
-hydro_max_consecutive_days = 4
-;
-
+hydro_max_consecutive_days = 1;
 
