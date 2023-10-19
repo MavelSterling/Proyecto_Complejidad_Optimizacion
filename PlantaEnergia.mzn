@@ -18,6 +18,9 @@ constraint forall(d in 1..n, p in 1..3) (production[d, p] <= capacities[p]);
 constraint forall(d in 1..n, s in 1..m) (client_supply[d, s] >= min_demand_percentage * demand[d, s]);
 constraint forall(d in 1..n, s in 1..m) (client_supply[d, s] <= demand[d, s]);
 constraint forall(d in 1..n) (sum(p in 1..3) (production[d, p]) = sum(s in 1..m) (client_supply[d, s]));
+constraint forall(d in 1..n, p in 1..3) (production[d, p] >= 0);
+constraint forall(d in 1..n, s in 1..m) (client_supply[d, s] >= 0);
+
 
 % Restricción adicional para la hidroeléctrica
 constraint forall(d in 2..n) (
